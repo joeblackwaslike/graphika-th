@@ -1,0 +1,22 @@
+// pipeline
+digraph {
+	extract [shape=rectangle]
+	schema [shape=rectangle]
+	date_filter [shape=rectangle]
+	nodes2 [shape=rectangle]
+	sql_load [shape=rectangle]
+	terms2 [shape=rectangle]
+	terms1 [shape=rectangle]
+	print [shape=rectangle]
+	nodes1 [shape=rectangle]
+	extract -> schema
+	schema -> date_filter
+	date_filter -> nodes1
+	date_filter -> nodes2
+	nodes2 -> terms2
+	terms2 -> print
+	terms2 -> sql_load
+	terms1 -> print
+	terms1 -> sql_load
+	nodes1 -> terms1
+}
